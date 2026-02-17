@@ -1,0 +1,7 @@
+{
+  "name": "bubble-tts",
+  "version": "1.0.0",
+  "description": "Select text, click the bubble, hear it spoken. Local TTS or Cloud (Gemini).",
+  "private": true,
+  "license": "MIT"
+}

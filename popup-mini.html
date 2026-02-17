@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/popup-mini.css">
+</head>
+
+<body>
+  <div class="pm">
+    <!-- Status Bar -->
+    <div class="pm-status" id="status-bar">
+      <span class="pm-pill" id="pill-engine" title="TTS engine">Engine: —</span>
+      <span class="pm-pill" id="pill-lang" title="Detected language">Lang: —</span>
+      <span class="pm-pill" id="pill-voice" title="Voice name">Voice: —</span>
+      <span class="pm-pill pm-pill-error hidden" id="pill-error" title="Click to copy error"></span>
+    </div>
+
+    <!-- Cloud not configured warning -->
+    <div class="pm-cloud-warn hidden" id="cloud-warn">
+      ⚠ Cloud TTS not configured.
+      <a href="#" id="link-cloud-setup">Set up Gemini API Key →</a>
+    </div>
+
+    <!-- Mode Segment -->
+    <div class="pm-section">
+      <label class="pm-label">Mode</label>
+      <div class="pm-modes" id="mode-group">
+        <button data-mode="auto" class="active">Auto</button>
+        <button data-mode="local">Local</button>
+        <button data-mode="cloud">Cloud</button>
+      </div>
+    </div>
+
+    <!-- Sliders -->
+    <div class="pm-section">
+      <div class="pm-slider-row">
+        <label for="sl-speed" class="pm-slider-label">Speed</label>
+        <input type="range" id="sl-speed" min="0.5" max="2.5" step="0.1" value="1.0">
+        <span class="pm-slider-val" id="val-speed">1.0x</span>
+      </div>
+      <div class="pm-slider-row">
+        <label for="sl-pitch" class="pm-slider-label">Pitch</label>
+        <input type="range" id="sl-pitch" min="0.5" max="2.0" step="0.1" value="1.0">
+        <span class="pm-slider-val" id="val-pitch">100%</span>
+      </div>
+      <div class="pm-slider-row">
+        <label for="sl-volume" class="pm-slider-label">Volume</label>
+        <input type="range" id="sl-volume" min="0.1" max="1.0" step="0.1" value="1.0">
+        <span class="pm-slider-val" id="val-volume">100%</span>
+      </div>
+      <div class="pm-reset-row">
+        <button id="btn-reset" class="pm-btn-reset" title="Reset speed, pitch & volume to defaults">Reset</button>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="pm-actions">
+      <button id="btn-stop" class="pm-btn pm-btn-stop" title="Stop playback">Stop</button>
+      <button id="btn-play" class="pm-btn pm-btn-play" title="Play selected text on page">Play Selection</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="pm-footer">
+      <a id="link-options" href="#">Cloud (Gemini) Settings…</a>
+    </div>
+  </div>
+  <script src="js/popup-mini.js"></script>
+</body>
+
+</html>

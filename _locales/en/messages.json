@@ -1,0 +1,11 @@
+{
+  "extension_name": {
+    "message": "Bubble TTS"
+  },
+  "extension_short_name": {
+    "message": "Bubble TTS"
+  },
+  "extension_description": {
+    "message": "Select text, click the bubble, hear it spoken. Local TTS or Cloud (Gemini)."
+  }
+}

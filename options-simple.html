@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bubble TTS — Settings</title>
+  <link rel="stylesheet" href="css/options-simple.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bubble TTS</h1>
+    <p class="subtitle">Cloud TTS Configuration (Gemini)</p>
+
+    <!-- Cloud Settings -->
+    <section id="cloud-section">
+      <div class="field">
+        <label class="toggle">
+          <span class="toggle-switch">
+            <input type="checkbox" id="cloud-enabled">
+            <span class="toggle-slider"></span>
+          </span>
+          Enable Cloud TTS
+        </label>
+      </div>
+
+      <div class="cloud-fields" id="cloud-fields">
+        <div class="field">
+          <label for="api-key">Gemini API Key</label>
+          <input type="password" id="api-key" placeholder="Paste your API key here" autocomplete="off"
+            spellcheck="false">
+          <button id="clear-key" class="btn-danger" style="margin-top:8px">Clear API Key</button>
+        </div>
+
+        <h3>Chinese Voices</h3>
+        <div class="inline-fields">
+          <div class="field">
+            <label for="zh-primary">Primary</label>
+            <select id="zh-primary"></select>
+          </div>
+          <div class="field">
+            <label for="zh-secondary">Fallback</label>
+            <select id="zh-secondary"></select>
+          </div>
+        </div>
+
+        <h3>English Voices</h3>
+        <div class="inline-fields">
+          <div class="field">
+            <label for="en-primary">Primary</label>
+            <select id="en-primary"></select>
+          </div>
+          <div class="field">
+            <label for="en-secondary">Fallback</label>
+            <select id="en-secondary"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning">
+        <strong>⚠ Privacy &amp; Security Notice</strong>
+        <ul style="margin:6px 0 0 0; padding-left:18px; font-size:13px; line-height:1.5">
+          <li><strong>Local mode</strong> uses your browser's built-in TTS engine — no data leaves your device.</li>
+          <li><strong>Cloud mode</strong> sends the selected text to Google Gemini servers to generate audio.</li>
+          <li>Your API key is stored locally in your browser (<code>chrome.storage.local</code>) and is <em>never</em>
+            synced to the cloud.</li>
+        </ul>
+        Use the "Clear API Key" button above to remove it at any time.
+      </div>
+    </section>
+  </div>
+
+  <div class="saved-toast" id="toast">Settings saved</div>
+
+  <script src="js/options-simple.js"></script>
+</body>
+
+</html>

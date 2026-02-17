@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Bubble TTS",
+  "short_name": "Bubble TTS",
+  "description": "Select text, click the bubble, hear it spoken — powered by Local TTS or Cloud (Gemini).",
+  "version": "1.0.0",
+  "default_locale": "en",
+  "minimum_chrome_version": "109",
+  "action": {
+    "default_popup": "popup-mini.html",
+    "default_title": "Bubble TTS"
+  },
+  "icons": {
+    "16": "img/icon-16.png",
+    "32": "img/icon-32.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+  "permissions": [
+    "contextMenus",
+    "offscreen",
+    "storage",
+    "tts"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "js/bubble-content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options-simple.html",
+  "options_ui": {
+    "page": "options-simple.html"
+  },
+  "commands": {
+    "stop": {
+      "suggested_key": {
+        "default": "Alt+O"
+      },
+      "description": "Stop reading"
+    }
+  }
+}
